@@ -29,5 +29,3 @@ def certificates():
 #    return render_template('submit.html', form=form)
 
 
-if __name__ == '__main__':
-   app.run(debug = True)
