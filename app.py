@@ -1,3 +1,4 @@
+import os, requests
 from flask import Flask, render_template
 from flask_wtf import *
 from wtforms import *
@@ -13,11 +14,14 @@ class MyForm(FlaskForm):
 @app.route('/',methods=['GET','POST'])
 def certificates():
     form = MyForm()
+    backendurl=os.getenv("backendurl")
     if form.validate_on_submit():
         print("hihihi")
         print(form.rollno,form.passw.data)
-        #return_template('certificates.html',form=hehe)
-        pass
+        resp=requests.post(url=backendurl,params={"rno":form.rollno,"password":form.pass.data})
+        if resp.status_code==200:
+            return resp.text
+        
     return render_template('certificates.html',form=form)
 
 
