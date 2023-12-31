@@ -20,8 +20,7 @@ def certificates():
         print(form.rollno,form.passw.data)
         resp=requests.post(url=backendurl,params={"rno":form.rollno,"pass":form.passw.data})
         if resp.status_code==200:
-            return resp.text
-        
+            return resp.text     
     return render_template('certificates.html',form=form)
 
 
