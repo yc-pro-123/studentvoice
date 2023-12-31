@@ -18,7 +18,7 @@ def certificates():
     if form.validate_on_submit():
         print("hihihi")
         print(form.rollno,form.passw.data)
-        resp=requests.post(url=backendurl,params={"rno":form.rollno,"password":form.pass.data})
+        resp=requests.post(url=backendurl,params={"rno":form.rollno,"pass":form.passw.data})
         if resp.status_code==200:
             return resp.text
         
