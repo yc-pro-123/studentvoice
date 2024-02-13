@@ -8,7 +8,7 @@ app.secret_key = 'development key'
 
 class MyForm(FlaskForm):
     rollno = StringField('Roll No :', validators=[DataRequired()])
-    passw = IntegerField('Password :',validators=[DataRequired()])
+    passw = PasswordField('Password :',validators=[DataRequired()])
     submit = SubmitField("Send")
 
 @app.route('/',methods=['GET','POST'])
