@@ -23,8 +23,9 @@ padding-right:8px;
 
 }
 .inp{
-width:40%
-background-color:rgba(8,8,8,0.4)
+box-sizing:border-box;
+width:40px;
+background-color:rgba(1,1,1,0.4)
 }
 .svjpg{
     padding:10px 20px 5px;
