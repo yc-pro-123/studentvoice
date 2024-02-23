@@ -1,5 +1,5 @@
 import os, requests
-from flask import Flask, render_template
+from flask import Flask, render_template,render_template_string
 from flask_wtf import *
 from wtforms import *
 from wtforms.validators import DataRequired
