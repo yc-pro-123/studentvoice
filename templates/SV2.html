@@ -25,6 +25,7 @@
 <h2 class="Sgreet">Hello, <h1 class="Sname">Name</h1></h2>
 <h4>Here you can download and view your certificates</h4>
 <div class="tabledata"> 
+{{ tabledata |default('No Data Available to show/ Unknown Request') }}
 <table>
 <tr><th rowspan="2" style="width:40px">S.no</th><th rowspan="2">Game ID/Date</th><th colspan="2">Certificates</th></tr>
 <tr><th>View</th><th>Download</th></tr>
