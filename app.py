@@ -15,14 +15,20 @@ class MyForm(FlaskForm):
 def certificates():
     form = MyForm()
     backendurl=os.getenv("backendurl")
+    error=[]
     if form.validate_on_submit():
         print("hihihi")
+        
         print(form.rollno,form.passw.data)
         resp=requests.post(url=backendurl,params={"rno":form.rollno.data,"pass":form.passw.data})
         if resp.status_code==200:
-            print(resp.text)
-            return resp.text     
-    return render_template('certificates.html',form=form)
+            status,data=resp.json()
+            print(resp.json())
+            if status==True:
+                return render_template("SV2.html",response=data) 
+            else:
+                return render_template("certificates.html",form=form,errors=data)  
+    return render_template('certificates.html',form=form,errors=error)
 
 
 #@app.route('/submit', methods=['GET', 'POST'])
