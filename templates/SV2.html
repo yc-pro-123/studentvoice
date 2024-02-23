@@ -28,7 +28,7 @@
 <h2 class="Sgreet">Hello, <h1 class="Sname">{{name}}</h1></h2>
 <h4>Here you can download and view your certificates</h4>
 <div class="tabledata"> 
-{{ tabledata |default('No Data Available to show/ Unknown Request') }}
+{{ tabledata|safe}}
 
 </div> 
 
