@@ -25,7 +25,7 @@ def certificates():
             status,data=resp.json()
             print(resp.json())
             if status==True:
-                return render_template("SV2.html",response=data) 
+                return render_template("SV2.html",name=data[0],tabledata=data[1]) 
             else:
                 return render_template("certificates.html",form=form,errors=data)  
     return render_template('certificates.html',form=form,errors=error)
