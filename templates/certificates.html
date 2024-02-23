@@ -1,5 +1,36 @@
 {% extends "base.html" %}
 {% block content %}
+
+
+<h1 style="font-family:Serif">Hello,</h1>
+<p><small>For Certificates, Kindly Login with your details.</small></p>
+<form class="form" method="POST" action="/">
+  {{ form.hidden_tag() }}
+  <p>
+    {{ form.rollno.label }}<br>
+
+    <input class="inp"  id="rollno" name="rollno" required size="10" type="text" value="" onfocus="addid()"><div class ="div_inp" id ="div_i1"></div>
+</p>
+<p>
+     {{ form.passw.label }}<br>
+
+  <input class="inp" id="passw" name="passw" required size="32" type="password" value=""><div class ="div_inpp" id="div_i2"></div>
+</p>
+<div class="buttons">
+<p>
+<div class="b1">{{ form.submit }}</div>
+
+
+<div class="b2"><input class="submit" name="reset" type="reset" value="Reset" onclick="document.getElementById("form").reset()"></div>
+</p>
+</div>
+</form>
+</div>
+
+
+
+<!--
+
 <h1>Hello, Dear.. </h1><h3><b>For Certificates,</b> Kindly Login with your details.</h3>
     {% if form.rollno.errors %}
       <ul class="errors">
@@ -12,7 +43,7 @@
       {{ form.hidden_tag() }}
       <p>
         {{ form.rollno.label }}<br>
-        {{ form.rollno(size=32,class_="inp") }}
+        {{ form.rollno(size=10,class_="inp") }}
     </p>
     <p>
         {{ form.passw.label }}<br>
@@ -21,6 +52,6 @@
     <p>{{ form.submit }}</p>
     </form>
  </div>
-
+-->
 <!--<submit class="button">gg</submit>-->
  {% endblock %}
